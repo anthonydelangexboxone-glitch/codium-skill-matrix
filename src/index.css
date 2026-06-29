@@ -1,0 +1,192 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  min-height: 100vh; /* Makes the body fill the whole window */
+  background-color: #111827; /* Match your bg-gray-900 to hide the white */
+}
+/* Container for the entire list */
+.skillforum {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px;
+  width: 100vw;
+  height: auto;
+  max-width: 600px;
+  padding: 20px;
+  background: rgba(17, 24, 39, 0.8); /* Updated to your bg-gray-900/80 */
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+}
+
+/* Header and Rows using the same grid structure for alignment */
+.skill-row,
+.matrix-header-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Name gets more space than level */
+  gap: 20px;
+  align-items: center;
+}
+
+.matrixheader {
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.2rem;
+  color: #9ca3af;
+  border-bottom: 2px solid #4b5563;
+  padding-bottom: 4px;
+}
+
+/* Input/Span consistency */
+.header-input-active,
+.header-text-inactive {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+.header-input-active {
+  background: #374151;
+  border: 1px solid #4b5563;
+  color: white;
+}
+
+.header-input-active:focus {
+  outline: none;
+  border-color: #60a5fa;
+}
+
+.header-text-inactive {
+  cursor: pointer;
+  color: #f3f4f6;
+  border: 1px solid transparent;
+}
+
+.header-text-inactive:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Button consistency */
+button {
+  padding: 10px;
+  background-color: #f3f4f6;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #e5e7eb;
+}
+
+/* Score section - clean and centered */
+.score-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(31, 41, 55, 0.4); /* Slightly lighter than the background */
+  border-left: 4px solid #60a5fa; /* The "blue accent" makes it pop */
+  border-radius: 4px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #f3f4f6;
+}
+
+.score-display h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.score-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #60a5fa; /* Blue color to match your focus state */
+}
+
+@media print {
+  * {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  button,
+  .skillforum-header,
+  .matrix-header-row {
+    display: none !important;
+  }
+
+  body {
+    background-color: rgb(255, 255, 255) !important;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 14px;
+    color: #111827;
+    margin-top: 32px;
+  }
+
+  thead tr {
+    background-color: #111827 !important;
+    color: #ffffff !important;
+  }
+
+  thead th {
+    padding: 12px 20px;
+    text-align: left;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f3f4f6 !important;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: #ffffff !important;
+  }
+
+  tbody td {
+    padding: 10px 20px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #111827;
+  }
+
+  tbody td:last-child {
+    font-weight: bold;
+    color: #1d4ed8;
+  }
+
+  tfoot tr {
+    background-color: #111827 !important;
+  }
+
+  tfoot td {
+    padding: 12px 20px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-top: 2px solid #1d4ed8;
+  }
+
+  tfoot td:last-child {
+    color: #93c5fd;
+    font-size: 15px;
+  }
+}
