@@ -26,9 +26,26 @@ body {
 .skill-row,
 .matrix-header-row {
   display: grid;
-  grid-template-columns: 2fr 1fr; /* Name gets more space than level */
+  grid-template-columns: 2fr 1fr auto;
   gap: 20px;
   align-items: center;
+}
+
+.btn-remove {
+  padding: 4px 8px;
+  background-color: transparent;
+  border: 1px solid #6b7280;
+  border-radius: 4px;
+  color: #9ca3af;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.btn-remove:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
 }
 
 .matrixheader {

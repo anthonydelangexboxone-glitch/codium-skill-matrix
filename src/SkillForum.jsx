@@ -44,6 +44,10 @@ function SkillForum() {
     );
   };
 
+  const removeSkill = (id) => {
+    setSkills((prev) => prev.filter((skill) => skill.id !== id));
+  };
+
   const refreshMatrix = () => {
     setSkills([{ id: 1, name: "", level: 0 }]);
   };
@@ -73,6 +77,7 @@ function SkillForum() {
           key={skill.id}
           skill={skill}
           updateSkill={updateSkill}
+          removeSkill={removeSkill}
         />
       ))}
       <ScoreCalc calculateScore={calculateScore} />
@@ -86,6 +91,7 @@ function SkillForum() {
 function SkillMatrix({
   skill,
   updateSkill,
+  removeSkill,
   isEditing,
   setIsEditing,
   handleKeyDown,
@@ -154,6 +160,14 @@ function SkillMatrix({
           {skill.level}
         </span>
       )}
+
+      <button
+        className="btn-remove"
+        onClick={() => removeSkill(skill.id)}
+        title="Remove skill"
+      >
+        &times;
+      </button>
     </div>
   );
 }
